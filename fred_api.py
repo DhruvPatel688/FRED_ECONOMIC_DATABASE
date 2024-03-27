@@ -93,6 +93,9 @@ def display_data(obs_data):
 		root = Tk() # Create a GUI window
 		root.title("Data Table")
 		#Makes the data table more viewable
+		scrollbar = Scrollbar(root)
+		scrollbar.pack(side = RIGHT, fill = Y)
+		table = Text(root, yscrollcommand=scrollbar.set, wrap = NONE)
 		table.pack(expand = True, fill = BOTH)
 		table.insert(END, obs_data)
 		scrollbar.config(command=table.yview)
